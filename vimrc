@@ -28,8 +28,6 @@ set secure
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"set tags=./tags;/,tags;/
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""YCM plugin configuration
 
@@ -48,34 +46,48 @@ highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set expandtab ts=4 sw=4 ai
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set autoindent
-set smartindent
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"" replace tab by spaces
+set expandtab 
+"" set tab length
+set tabstop=4
+"" when tabstop == softtabstop, it enable deleting more than one charackter when press <BS>
+set softtabstop=4
+""  keep indent of last line
+""set autoindent
+"" length of (auto)indent
+set shiftwidth=4
+"" indentation based on C style languages
+set cindent
+"" indent options
+set cinoptions=(0,u0,U0
+
+"" synchronize to system clipboard
 set clipboard=unnamedplus
 
-nnoremap <C-l> gt
-nnoremap <C-h> gT
-
+"" maping which enable or disable displaying NERDTree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+"" 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"" load NERDTree at start of vim
 autocmd vimenter * NERDTree
 
-"set tags=./tags;/
-
-set background=dark											"tell vim how background looks like, for tmux
-set t_Co=256												"enable 256 colors in vim, for tmux
-syntax on										
+"" tell vim how background looks like, for tmux
+set background=dark
+"" enable 256 colors in vim, for tmux
+set t_Co=256
+"" different colorst of syntax
+syntax on					
+"" display line numbers
 set number
 
 
-
+"" display constraint column
 set colorcolumn=120
-set cursorline
 highlight ColorColumn ctermbg=235 guibg=#2c2d27 
+"" display current line
+set cursorline
 highlight CursorLine cterm=NONE ctermbg=235 guibg=#2c2d27 guifg=white
 
 
@@ -84,12 +96,6 @@ highlight CursorLine cterm=NONE ctermbg=235 guibg=#2c2d27 guifg=white
 " CSCOPE settings for vim           
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
-    " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
-    set cscopetag
-    " check cscope for definition of a symbol before checking ctags: set to 1
-    " if you want the reverse search order.
-    set csto=0
-
     " add any cscope database in current directory
     if filereadable("cscope.out")
         cs add cscope.out  
