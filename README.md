@@ -6,16 +6,18 @@ After cloning repository, you need to provide a way that files will be visible.
 You can just move them to specified location or create a links.
 
 - For files:
+
 `$ ln <target> <link_name>`
 
 - For directories:
+
 `$ ln -s <target> <link_name>`
 
 ## Vim configuration
 
 1. Create directory where Vim plugins will be stored.
 
-`$ mkdir ~/.vim/bundle'`
+`$ mkdir ~/.vim/bundle`
 
 2. Clone plugin manager for Vim like Vundle.
 
