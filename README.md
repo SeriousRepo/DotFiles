@@ -21,7 +21,7 @@ You can just move them to specified location or create a links.
 
 2. Clone plugin manager for Vim like Vundle.
 
-`$ git clone https://github.com/VundleVim/Vundle.vim.git`
+`$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 3. Open .vimrc file with text editor like Vim.
 
