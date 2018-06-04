@@ -1,6 +1,8 @@
 selectp -t 0 # select the first (0) pane
-splitw -h -p 50 # split it into two halves
+splitw -v -p 10 # split it into two halves
 
-selectp -t 1 # select the new, second (1) pane
-splitw -v -p 50 'vim' # split it into two halves
-selectp -t 0 # go back to the first pane
+selectp -t 1
+splitw -h -p 35 'watch -tn 0,1 free -hmt'
+
+selectp -t 1
+selectp -t 0
