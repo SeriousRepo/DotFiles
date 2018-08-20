@@ -1,17 +1,12 @@
 selectp -t 0
 splitw -v -p 10
 
-selectp -t 0
- 
-splitw -h -p 35 'watch -tn 0,1 free -hmt'
-
-selectp -t 1
-splitw -v -p 90 'watch -ctn 3600 ~/dev/scripts/useless-scripts/oneplus-update-checker/update-checker.py'
-
-selectp -t 2
-splitw -v -p 85
-
-selectp -t 4 
 splitw -h -p 35
+
+selectp -t 0
+
+splitw -h -p 35 'canto-curses'
+
+splitw -v -p 70 
 
 selectp -t 0
